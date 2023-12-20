@@ -22,7 +22,6 @@ async function removeContact(id) {
   const [result] = contacts.splice(index, 1);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return result;
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 }
 
 async function addContact(data) {
@@ -35,7 +34,6 @@ async function addContact(data) {
   contacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return newContact;
-  // ...твій код. Повертає об'єкт доданого контакту.
 }
 module.exports = {
   listContacts,
@@ -43,6 +41,3 @@ module.exports = {
   removeContact,
   addContact,
 };
-// const fileOperation = async () => {
-//   const data = await fs.readFile("./db/contacts.json");
-// };
